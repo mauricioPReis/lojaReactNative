@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, StatusBar, 
   TouchableOpacity, Modal, TextInput, Image, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Produtos from './src/components/Produtos';
 
 
 import * as Animatable from 'react-native-animatable';
