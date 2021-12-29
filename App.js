@@ -31,27 +31,27 @@ export default function App() {
   function two(){
     setImage(true);
     setLink(require('./src/images/prod2.jpg'));
-    setDescript('R$ 799.99 ||Adorno em Obsidiana, pingente Yin e Yang');
+    setDescript('R$ 799.99 || Adorno em Obsidiana, pingente Yin e Yang');
   }
   function three(){
     setImage(true);
     setLink(require('./src/images/prod3.jpg'));
-    setDescript('R$ 99.99 ||Adorno em Ouro, pingente de Leopardo');
+    setDescript('R$ 99.99 || Adorno em Ouro, pingente de Leopardo');
   }
   function four(){
     setImage(true);
     setLink(require('./src/images/prod4.jpg'));
-    setDescript('R$ 209.99 ||Adorno em Cobre, pingente Estrela de David');
+    setDescript('R$ 209.99 || Adorno em Cobre, pingente Estrela de David');
   }
   function five(){
     setImage(true);
     setLink(require('./src/images/prod5.jpg'));
-    setDescript('R$ 159.99 ||Adorno em Ouro, edição Cavalgada');
+    setDescript('R$ 159.99 || Adorno em Ouro, edição Cavalgada');
   }
-  function liu(){
+  function six(){
     setImage(true);
     setLink(require('./src/images/prod6.jpg'));
-    setDescript('R$ 499.99 ||Adorno em Ouro, edição Gamer - Pingente Olho da Verdade');
+    setDescript('R$ 499.99 || Adorno em Ouro, edição Gamer - Pingente Olho da Verdade');
   }
   return (
     <SafeAreaView style={styles.container}>
@@ -61,11 +61,11 @@ export default function App() {
         <Text style={styles.title}>Loja do Antonio Neto</Text>
         
         <TextInput 
-        placeholder='Usuário'
-        placeholderTextColor='#747474'
-        value={input}
-        style={styles.input}
-        onChangeText={ (texto) => setInput(texto) }
+          placeholder='Usuário'
+          placeholderTextColor='#747474'
+          value={input}
+          style={styles.input}
+          onChangeText={ (texto) => setInput(texto) }
         />
 
           <TouchableOpacity onPress={verify} style={styles.head}>
@@ -75,34 +75,61 @@ export default function App() {
 
       </Animatable.View>
 
-     <Modal animationtype='bounceInUp' transparent={false} visible={door} >
-       <SafeAreaView style={styles.container}>
-        
-           <Text style={styles.title}>Loja do Antonio Neto</Text>
-           <Text style={styles.subtitle}> Bem vindo: {input} </Text>
-         
-         <View style={styles.images}>
-         <TouchableOpacity onPress={one}><Image  source={require('./src/images/prod1.jpg')} style={{height: 150, width: 150, flexDirection: 'row'}} /></TouchableOpacity>
-         <TouchableOpacity onPress={two}><Image  source={require('./src/images/prod2.jpg')} style={{height: 150, width: 150, flexDirection: 'row'}} /></TouchableOpacity>
-         <TouchableOpacity onPress={three}><Image  source={require('./src/images/prod3.jpg')} style={{height: 150, width: 150, flexDirection: 'row'}} /></TouchableOpacity>
-         <TouchableOpacity onPress={four}><Image  source={require('./src/images/prod4.jpg')} style={{height: 150, width: 150, flexDirection: 'row'}} /></TouchableOpacity>
-         <TouchableOpacity onPress={five}><Image  source={require('./src/images/prod5.jpg')} style={{height: 150, width: 150, flexDirection: 'row'}} /></TouchableOpacity>
-         <TouchableOpacity onPress={liu}><Image  source={require('./src/images/prod6.jpg')} style={{height: 150, width: 150, flexDirection: 'row'}} /></TouchableOpacity>
-          </View>
-            
-       </SafeAreaView>
-     </Modal>
+      <Modal animationtype='bounceInUp' transparent={false} visible={door} >
+        <SafeAreaView style={styles.container}>
+          
+            <Text style={styles.title}>Loja do Antonio Neto</Text>
+            <Text style={styles.subtitle}> Bem vindo: {input} </Text>
+          
+            <View style={styles.images}>
+              <TouchableOpacity onPress={one}>
+                <Image 
+                    source={require('./src/images/prod1.jpg')} 
+                    style={{height: 150, width: 150, flexDirection: 'row', borderRadius: '5px'}}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={two}>
+                <Image 
+                  source={require('./src/images/prod2.jpg')} 
+                  style={{height: 150, width: 150, flexDirection: 'row', borderRadius: '5px'}} 
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={three}>
+                <Image 
+                  source={require('./src/images/prod3.jpg')} 
+                  style={{height: 150, width: 150, flexDirection: 'row', borderRadius: '5px'}} 
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={four}>
+                <Image  
+                  source={require('./src/images/prod4.jpg')} 
+                  style={{height: 150, width: 150, flexDirection: 'row', borderRadius: '5px'}} 
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={five}>
+                <Image  
+                  source={require('./src/images/prod5.jpg')} 
+                  style={{height: 150, width: 150, flexDirection: 'row', borderRadius: '5px'}} 
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={six}>
+                <Image 
+                  source={require('./src/images/prod6.jpg')} 
+                  style={{height: 150, width: 150, flexDirection: 'row', borderRadius: '5px'}} 
+                />
+              </TouchableOpacity>
+            </View>
+              
+        </SafeAreaView>
+      </Modal>
 
-     <Modal animationtype='bounceInUp' transparent={false} visible={image} style={{backgroundColor: '#000'}}>
-       
-       <TouchableOpacity onPress={ () => setImage(false) }>
-         <Ionicons style={{marginLeft: 5, marginRight: 5}}name="md-arrow-back" size={40} color="#DDD" />
-       </TouchableOpacity>
-       <Image source={link} style={styles.into} />
-       <Text style={{textAlign:'center'}}>{descript}</Text>
-       
-      
-     </Modal>
+      <Modal animationtype='bounceInUp' transparent={false} visible={image} style={{backgroundColor: '#000'}}>       
+        <TouchableOpacity onPress={ () => setImage(false) }>
+          <Ionicons style={{marginLeft: 5, marginRight: 5}}name="md-arrow-back" size={40} color="#DDD" />
+        </TouchableOpacity>
+        <Image source={link} style={styles.into} />
+        <Text style={{textAlign:'center'}}>{descript}</Text>      
+      </Modal>
     </SafeAreaView>
   );
 }
